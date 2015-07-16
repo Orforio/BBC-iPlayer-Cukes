@@ -17,4 +17,4 @@ end
 
 Capybara.app_host = 'http://www.bbc.co.uk'
 
-World(Rspec::Matchers)
+World(RSpec::Matchers)
