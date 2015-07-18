@@ -5,14 +5,7 @@ Given(/^I am on the registration page$/) do
 end
 
 Given(/^I am on the iPlayer home page$/) do
-  visit('/iplayer')
-end
-
-Given(/^I am logged in$/) do
-  visit('https://ssl.bbc.co.uk/id/signin')
-  fill_in('Email or username' :with => 'developerintest')
-  fill_in('Password' :with => 'developerintest')
-  click_button('Sign in')
+  visit('/iplayer/favourites')
 end
 
 When(/^I try to visit "(.+)"$/) do |url|
@@ -57,7 +50,7 @@ end
 Then(/^I am redirected to "?(.+)"?$/) do |url|
   url = case url
   when 'the favourites page'
-    '/iplayer/favourite'
+    '/iplayer/favourites'
   when 'the registration page'
     '/id/register'
   end
