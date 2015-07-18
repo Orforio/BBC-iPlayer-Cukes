@@ -1,5 +1,5 @@
 #encoding: utf-8
-@active
+
 Feature: iPlayer Favourites
   As a user,
   I want to add favourite programmes

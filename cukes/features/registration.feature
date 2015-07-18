@@ -53,6 +53,15 @@ Feature: Registering for iPlayer
     And I press the "Register" button
     Then I see the text "These do not match"
     
+  Scenario: Entering an incomplete email and an insecure password
+    Given I am on the registration page
+    When I fill in the "Email" field with an incomplete email
+    And I fill in the "New password" field with an insecure password
+    And I fill in the "Confirm password" field with an insecure password
+    And I press the "Register" button
+    Then I see the text "This email address is not valid"
+    And I see the text "Your password is insecure"
+    
   Scenario: Entering a duplicate email
     Given I am on the registration page
     When I fill in the "Email" field with a registered email
