@@ -1,5 +1,5 @@
 #encoding: utf-8
-
+@active
 Feature: Registering for iPlayer
   As a new user,
   I want to register for iPlayer,
@@ -75,5 +75,5 @@ Feature: Registering for iPlayer
     And I fill in the "Confirm password" field with the correct password
     And I press the "Register" button
     Then I see the text "Your registration is complete"
-    When I press the "Continue" button
+    When I press the "Continue" link
     Then I am redirected to the favourites page
