@@ -1,9 +1,5 @@
 #encoding: utf-8
 
-Given(/^I am on the registration page$/) do
-  visit('https://ssl.bbc.co.uk/id/register?ptrt=http%3A%2F%2Fwww.bbc.co.uk%2Fiplayer%2Ffavourite')
-end
-
 Given(/^I am on the iPlayer home page$/) do
   visit('/iplayer/favourites')
 end
@@ -17,29 +13,11 @@ When(/^I press the "(.+)" link$/) do |link|
   click_link(link)
 end
 
-When(/^I press the "(.+)" button$/) do |button|
+When(/^I press the "(.+)" button$/) do |button|	
   click_button(button)
-  sleep(5)
 end
 
-When(/^I fill in the "(.+)" field with "?(.+)"?$/) do |field, contents|
-  contents = case contents
-  when 'a too long password'
-    ')Aq/BX!<E69@ycWuSBH]^Tu*ba_4^?mS^w^FB]7*m4[?knWp`C+'
-  when 'a too short password'
-    '=Hn3'
-  when 'the correct password'
-    'developerintest'
-  when 'the wrong password'
-    'developer'
-  when 'a registered email'
-    'developerintest@sharklasers.com'
-  when 'a valid email'
-    "developerintest#{Time.now.to_i}@sharklasers.com"
-  when 'an invalid email'
-    'not valid@sharklasers.com'
-  end
-	  
+When(/^I fill in the "(.+)" field with "(.+)"$/) do |field, contents|
   fill_in(field, :with => contents)
 end
 
@@ -47,13 +25,21 @@ Then(/^I see the text "(.+)"$/) do |text|
   page.should have_text(text)
 end
 
-Then(/^I am redirected to "?(.+)"?$/) do |url|
+Then(/^I am redirected to "(.+)"$/) do |url|
+  current_path.should == url
+end
+
+Then(/^I am redirected to the (.+) page$/) do |url|
   url = case url
-  when 'the favourites page'
+  when 'favourites'
     '/iplayer/favourites'
-  when 'the registration page'
+  when 'registration'
     '/id/register'
+  when 'sign in'
+    '/id/signin'
+  else
+    url
   end
 	
-  current_path.should == url
+  step "I am redirected to \"#{url}\""
 end
