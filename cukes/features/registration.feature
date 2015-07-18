@@ -1,5 +1,5 @@
 #encoding: utf-8
-@active
+
 Feature: Registering for iPlayer
   As a new user,
   I want to register for iPlayer,

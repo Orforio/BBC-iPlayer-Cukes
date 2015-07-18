@@ -50,4 +50,4 @@ Feature: Signing into iPlayer
     And I fill in the "Password" field with the correct password
     And I press the "Sign in" button
     Then I am redirected to the favourites page
-    And I see the text "You're signed in"
+    And I see the text "Your account"

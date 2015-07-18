@@ -1,7 +1,7 @@
 #encoding: utf-8
 
 Given(/^I am on the registration page$/) do
-  visit('https://ssl.bbc.co.uk/id/register?ptrt=http%3A%2F%2Fwww.bbc.co.uk%2Fiplayer%2Ffavourite')
+  visit('https://ssl.bbc.co.uk/id/register?ptrt=http%3A%2F%2Fwww.bbc.co.uk%2Fiplayer%2Ffavourites')
 end
 
 Given(/^I am on the sign in page$/) do
@@ -9,7 +9,7 @@ Given(/^I am on the sign in page$/) do
 end
 
 When(/^I press the sign in link$/) do
-  page.find('.id4-cta-signin').click
+  page.find('//a[contains(@class, "id4-cta-signin")]').click # Special case - some pages contain multiple sign in links
 end
 
 When(/^I fill in the "(.+)" field with (?:an?|the) (.+)$/) do |field, contents|

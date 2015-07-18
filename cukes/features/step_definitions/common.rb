@@ -1,7 +1,7 @@
 #encoding: utf-8
 
-Given(/^I am on the iPlayer home page$/) do
-  visit('/iplayer/favourites')
+Transform /^(-?\d+)$/ do |number|
+  number.to_i
 end
 
 When(/^I try to visit "(.+)"$/) do |url|
