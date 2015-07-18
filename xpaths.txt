@@ -1,0 +1,20 @@
+Registration:
+  Email field - //input[@id='bbcid_email']
+  Password field - //input[@id='bbcid_createpassword']
+  Password confirmation field - //input[@id='bbcid_confirmpassword']
+  Register button - //input[@id='bbcid_submit_button' and @value='Register']
+  Cancel link - //div[contains(@class, 'bbcid-actions')]/a[contains(@class, 'cancel')]
+  
+Sign in:
+  Email or username field - //input[@id='bbcid_unique']
+  Password field - //input[@id='bbcid_password']
+  Remember me box (visible portion) - //div[contains(@class, 'rememberme-container')]/a
+  Sign in button - //input[@id='bbcid_submit_button' and @value='Sign in']
+  Cancel link - //div[contains(@class, 'bbcid-actions')]/a[contains(@class, 'cancel')]
+  
+Favourites:
+  TV Guide - first available show - (//a[contains(@class, 'inner--non-streaming') and contains(@class, 'is-available')])[1]
+  Programme page - favourites button - //div[@id='external']//button[contains(@class, 'favourites')]
+  Favourites page - remove favourite button on first show - //ul[@id='programme-container']/li[1]/div[@class='remove-block']/button[@class='confirm-icon']
+  Favourites page - confirmation remove button on first show - //ul[@id='programme-container']/li[1]/div[@class='remove-block']/button[@class='confirm-link']
+  Favourites page - first show link - //ul[@id='programme-container']/li[1]//a[contains(@class, 'episode-link')]
