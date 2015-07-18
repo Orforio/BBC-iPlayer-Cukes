@@ -17,5 +17,6 @@ else
 end
 
 Capybara.app_host = 'http://www.bbc.co.uk'
+Capybara.default_selector = :xpath
 
 World(RSpec::Matchers)
